@@ -9,8 +9,14 @@
   --max: 68rem;
 }
 
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: "Source Sans 3", system-ui, sans-serif;
@@ -22,13 +28,20 @@ body {
   line-height: 1.55;
 }
 
-a { color: var(--aka-deep); }
-a:hover { color: var(--aka); }
+a {
+  color: var(--aka-deep);
+}
+
+a:hover {
+  color: var(--aka);
+}
 
 .wrap {
   width: min(100% - 2.5rem, var(--max));
   margin-inline: auto;
 }
+
+/* Header */
 
 .site-header {
   display: flex;
@@ -36,9 +49,13 @@ a:hover { color: var(--aka); }
   justify-content: space-between;
   padding: 1.25rem 0;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
   font-family: "Shippori Mincho", "Noto Serif JP", serif;
   font-weight: 600;
   font-size: 1.35rem;
@@ -47,19 +64,82 @@ a:hover { color: var(--aka); }
   text-decoration: none;
 }
 
-.nav { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+.brand img {
+  width: 40px;
+  height: 40px;
+  border-radius: 22%;
+  display: block;
+  animation: logo-soft 4s ease-in-out infinite;
+}
+
+@keyframes logo-soft {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 0.92;
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
 .nav a {
   text-decoration: none;
   color: var(--ink-soft);
   font-size: 0.95rem;
 }
-.nav a:hover { color: var(--aka); }
+
+.nav a:hover {
+  color: var(--aka);
+}
+
+.lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-left: 0.25rem;
+  padding-left: 0.75rem;
+  border-left: 1px solid var(--line);
+  font-size: 0.9rem;
+}
+
+.lang a {
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+
+.lang a[aria-current="page"] {
+  color: var(--aka);
+  font-weight: 600;
+}
+
+/* Hero */
 
 .hero {
   padding: 3.5rem 0 4rem;
   display: grid;
   gap: 1.25rem;
   max-width: 38rem;
+  animation: rise 0.8s ease both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .hero h1 {
@@ -102,6 +182,7 @@ a:hover { color: var(--aka); }
   background: var(--aka);
   color: #fff;
 }
+
 .btn-primary:hover {
   background: var(--aka-deep);
   color: #fff;
@@ -112,10 +193,13 @@ a:hover { color: var(--aka); }
   color: var(--ink);
   border-color: var(--line);
 }
+
 .btn-ghost:hover {
   border-color: var(--aka);
   color: var(--aka);
 }
+
+/* Sections */
 
 .section {
   padding: 2.75rem 0;
@@ -161,6 +245,42 @@ a:hover { color: var(--aka); }
   max-width: 36rem;
 }
 
+/* Screenshots */
+
+.screen-row {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.screen-row img {
+  height: min(420px, 70vh);
+  width: auto;
+  max-width: none;
+  border-radius: 1rem;
+  border: 1px solid var(--line);
+  background: var(--paper-2);
+  scroll-snap-align: start;
+  animation: rise 0.9s ease both;
+}
+
+.screen-row img:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.screen-row img:nth-child(3) {
+  animation-delay: 0.24s;
+}
+
+.screen-row img:nth-child(4) {
+  animation-delay: 0.36s;
+}
+
+/* Footer */
+
 .site-footer {
   border-top: 1px solid var(--line);
   padding: 2rem 0 3rem;
@@ -172,27 +292,61 @@ a:hover { color: var(--aka); }
   justify-content: space-between;
 }
 
-.site-footer a { text-decoration: none; }
+.site-footer a {
+  text-decoration: none;
+}
 
-/* Privacy */
+/* Privacy prose */
+
 .prose {
   padding: 2rem 0 4rem;
   max-width: 42rem;
 }
+
 .prose h1 {
   font-family: "Shippori Mincho", serif;
   font-size: clamp(1.8rem, 4vw, 2.4rem);
   margin: 0 0 0.5rem;
 }
+
 .prose .meta {
   color: var(--ink-soft);
   font-size: 0.9rem;
   margin-bottom: 2rem;
 }
+
 .prose h2 {
   font-family: "Shippori Mincho", serif;
   font-size: 1.25rem;
   margin: 2rem 0 0.6rem;
 }
-.prose p, .prose li { color: var(--ink); }
-.prose ul { padding-left: 1.2rem; }
+
+.prose p,
+.prose li {
+  color: var(--ink);
+}
+
+.prose ul {
+  padding-left: 1.2rem;
+}
+
+.prose code {
+  font-size: 0.9em;
+  background: var(--paper-2);
+  padding: 0.1em 0.35em;
+  border-radius: 0.25rem;
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero,
+  .screen-row img,
+  .brand img {
+    animation: none;
+  }
+}
