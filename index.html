@@ -4,22 +4,62 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mobile Sensei — японский в кармане</title>
+  <meta name="description" content="Карманная практика японского: кана, кандзи, уроки и тренажёры. Офлайн. Без облачного ИИ." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main>
-    <h1>Mobile Sensei</h1>
-    <p>Карманная практика японского: кана, кандзи, уроки и тренажёры. Без облачного ИИ.</p>
-    <p>
-      <a href="https://play.google.com/store/apps/details?id=com.skull.nihongosensei">
-        Google Play
-      </a>
-    </p>
-    <p>
-      <a href="https://www.rustore.ru/catalog/app/com.skull.nihongosensei">
-        RuStore
-      </a>
-    </p>
-    <p><a href="privacy.html">Политика конфиденциальности</a></p>
-  </main>
+  <div class="wrap">
+    <header class="site-header">
+      <a class="brand" href="index.html">Mobile Sensei</a>
+      <nav class="nav">
+        <a href="#features">Возможности</a>
+        <a href="privacy.html">Конфиденциальность</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Mobile Sensei</h1>
+      <p class="lead">
+        Карманная ежедневная практика японского — не учебник на полку.
+        Кана, кандзи, уроки, тренажёры и планы. Данные на устройстве. Без облачного ИИ.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary"
+           href="https://play.google.com/store/apps/details?id=com.skull.nihongosensei">
+          Google Play
+        </a>
+        <a class="btn btn-primary"
+           href="https://www.rustore.ru/catalog/app/com.skull.nihongosensei">
+          RuStore
+        </a>
+        <a class="btn btn-ghost" href="privacy.html">Политика конфиденциальности</a>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <h2>Что внутри</h2>
+      <ul class="features">
+        <li><strong>Уроки и справочники</strong><span>Фразы, грамматика, таблицы — под рукой в поездке.</span></li>
+        <li><strong>Кана и кандзи</strong><span>Изучение и повторение с упором на практику.</span></li>
+        <li><strong>Тренажёры</strong><span>Слова, пропуски, порядок, карточки — короткие сессии.</span></li>
+        <li><strong>Планы и цель дня</strong><span>Мягкие напоминания в удобное время, без ночных сюрпризов.</span></li>
+      </ul>
+      <p class="note" style="margin-top:1.5rem">
+        Приложение для Android. Прогресс и заметки хранятся локально на телефоне.
+      </p>
+    </section>
+
+    <footer class="site-footer">
+      <span>© Mobile Sensei</span>
+      <span>
+        <a href="privacy.html">Privacy</a>
+        ·
+        <a href="mailto:developdd85@gmail.com">developdd85@gmail.com</a>
+      </span>
+    </footer>
+  </div>
 </body>
 </html>
